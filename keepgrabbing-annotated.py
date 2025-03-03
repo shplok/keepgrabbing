@@ -1,4 +1,4 @@
-'''
+''
 This is written in python2.
 
 I because we don't have the URL which is reacted, some of the notes here
@@ -34,7 +34,7 @@ class NoBlocks(Exception): pass
     external resource that the URL points to. The read function that is called
     on this simply reads the byte contents and returns them.
 
-    The second line of this function checks to see if there is HTMl in the
+    The second line of this function checks to see if there is HTML in the
     retrieved page. If there is then it raises a NoBlocks exception and
     exits the script. It is likely that the URL that is reacted simply
     was a text file with the PDFs Swartz wanted to download. When he
@@ -47,7 +47,7 @@ class NoBlocks(Exception): pass
 '''
 def getblocks():
     r = urllib.urlopen("http://{?REDACTED?}/grab").read()
-    if '<html' in r.lower(): raise NoBlocks
+    if '<HTML' in r.lower(): raise NoBlocks
     return r.split()
 
 '''
